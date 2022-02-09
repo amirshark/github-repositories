@@ -29,7 +29,7 @@
 }
 
 .title a {
-  color: #0070f3;
+  /* color: #2196f3; */
   text-decoration: none;
 }
 
@@ -45,6 +45,13 @@
   font-size: 4rem;
 }
 
+@media (max-width:768px) {
+    .title {
+      font-size: 3rem;
+    }
+
+}
+
 .title,
 .description {
   text-align: center;
@@ -53,7 +60,7 @@
 .description {
   margin: 4rem 0;
   line-height: 1.5;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .code {
@@ -88,8 +95,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  /* color: #2196f3; */
+  border-color: #2196f3;
 }
 
 .card h2 {
