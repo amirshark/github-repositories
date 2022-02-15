@@ -1,4 +1,4 @@
-import { GET, POST } from './Fetch';
+import axios from 'axios';
 
 class API {
     constructor() {
@@ -7,17 +7,16 @@ class API {
         this.prefix = process.env.NEXT_PUBLIC_NAME;
     }
 
-    async getRepo() {
-        return await GET(`${this.url}/orgs/${this.org}/repos`);
+    // fetch repo list
+    async getRepo({ per_page }) {
+        return axios.get(`${this.url}/orgs/${this.org}/repos?per_page=${per_page}`);
     }
 
-    async search({ query }) {
-        return await GET(`${this.url}/search/repositories?q=${query}+org:${this.org}`);
-    }
 
-    // spinner
-    Loading(start) { }
-    UpdateCartNumber(number) { }
+    // fetch search results
+    async search({ query, per_page }) {
+        return axios.get(`${this.url}/search/repositories?q=${query}+org:${this.org}&per_page=${per_page}`);
+    }
 }
 
 let Api = new API();
